@@ -1,4 +1,4 @@
-package ee.laovarustus.quatationdeveloper;
+package ee.laovarustus.quotationdeveloper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
