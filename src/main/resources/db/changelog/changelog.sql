@@ -35,3 +35,19 @@ CREATE TABLE customers
 INSERT INTO customers(company_name, general_address)
 VALUES ('LOGISTIKA PLUSS OÜ',
         'Tallinn, Punane 73');
+
+
+--liquibase formatted sql
+--changeset quatation:202301262230
+
+CREATE EXTENSION ltree;
+
+CREATE TABLE products
+(
+    id        uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+    parent_id uuid,
+    name      TEXT  NOT NULL,
+    path      ltree NOT NULL
+);
+
+CREATE INDEX path_gist_idx ON products USING GIST (path);
