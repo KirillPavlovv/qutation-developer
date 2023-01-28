@@ -13,6 +13,9 @@ import {DropdownDirective} from './shared/dropdown.directive';
 import {ShoppingListService} from "./shopping-list/shopping-list.service";
 import { ProposalListComponent } from './proposal-list/proposal-list.component';
 import { NewProposalComponent } from './new-proposal/new-proposal.component';
+import { CompanyComponent } from './company/company.component';
+import {AppRoutingModule} from "./app-routing.module";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -27,9 +30,12 @@ import { NewProposalComponent } from './new-proposal/new-proposal.component';
     DropdownDirective,
     ProposalListComponent,
     NewProposalComponent,
+    CompanyComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
