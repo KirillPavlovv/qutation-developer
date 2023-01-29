@@ -16,6 +16,7 @@ import { NewProposalComponent } from './new-proposal/new-proposal.component';
 import { CompanyComponent } from './company/company.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule} from "@angular/forms";
+import { PersonComponent } from './company/person/person.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {FormsModule} from "@angular/forms";
     ProposalListComponent,
     NewProposalComponent,
     CompanyComponent,
+    PersonComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,31 +1,110 @@
 <div class="customModal">
-  <form (ngSubmit)="onSubmit()">
-    <div class="row">
-      <div class="col-sm-10 form-group input-group-sm">
-        <label for="name">Company name</label>
-        <input
-          type="text"
-          id="name"
-          class="form-control"
-          [(ngModel)]="customer.companyName">
+  <div class="button-group pull-right">
+    <button type="button" class="btn btn-danger as-btn-text as-refresh-btn" (click)="onCancel()">X</button>
+  </div>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="modal-title">
+      <h2>Register new company</h2>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-sm-12 form-group input-group-sm">
+          <label for="name">Company name</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            ngModel
+            required
+            name="companyName"
+            #companyName="ngModel">
+          <span class="help-block" *ngIf="companyName.touched">Please enter company name!</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 form-group input-group-sm">
+          <label for="name">Company address</label>
+          <input
+            type="text"
+            id="address"
+            class="form-control"
+            ngModel
+            required
+            name="generalAddress"
+            #generalAddress="ngModel">
+          <span class="help-block" *ngIf="generalAddress.touched">Please enter company address!</span>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-10 form-group input-group-sm">
-        <label for="name">Company address</label>
-        <input
-          type="text"
-          id="address"
-          class="form-control"
-        [(ngModel)]="customer.generalAddress">
+    <div class="card">
+      <h3>Contact person</h3>
+      <div class="row">
+        <div class="col-sm-12 form-group input-group-sm">
+          <label for="name">First name</label>
+          <input
+            type="text"
+            id="firstName"
+            class="form-control"
+            ngModel
+            required
+            name="firstName"
+            #firstName="ngModel">
+          <span class="help-block" *ngIf="firstName.touched">Please enter first name!</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 form-group input-group-sm">
+          <label for="name">Last name</label>
+          <input
+            type="text"
+            id="lastname"
+            class="form-control"
+            ngModel
+            required
+            name="lastname"
+            #lastname="ngModel">
+          <span class="help-block" *ngIf="lastname.touched">Please enter last name!</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 form-group input-group-sm">
+          <label for="name">Phone number</label>
+          <input
+            type="text"
+            id="phoneNumber"
+            class="form-control"
+            ngModel
+            name="phoneNumber">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 form-group input-group-sm">
+          <label for="name">Email address</label>
+          <input
+            type="text"
+            id="email"
+            class="form-control"
+            ngModel
+            required
+            email
+            name="email"
+            #email="ngModel">
+          <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-2 form-group btn-group">
-        <button class="btn btn-success" type="submit" style="margin-top: 25px">Create</button>
+        <button
+          class="btn btn-success"
+          type="submit"
+          style="margin-top: 25px"
+          [disabled]="f.invalid"
+        >Create
+        </button>
       </div>
       <div class="col-sm-2 form-group btn-group">
-        <button class="btn btn-danger" style="margin-top: 25px">Close</button>
+        <button class="btn btn-danger" style="margin-top: 25px" (click)="onCancel()">Close</button>
       </div>
     </div>
   </form>
