@@ -4,7 +4,6 @@ import ee.laovarustus.quotationdeveloper.domain.customer.Customer;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.io.Serializable;
 import java.util.UUID;
 
 @Builder
