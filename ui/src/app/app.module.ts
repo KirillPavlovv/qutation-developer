@@ -17,6 +17,7 @@ import { CompanyComponent } from './company/company.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule} from "@angular/forms";
 import { PersonComponent } from './company/person/person.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PersonComponent } from './company/person/person.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]

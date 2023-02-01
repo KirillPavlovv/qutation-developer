@@ -1,7 +1,8 @@
 --liquibase formatted sql
---changeset quatation:202301261950
+--changeset quotation:202301261950
 
 CREATE EXTENSION "uuid-ossp";
+CREATE EXTENSION ltree;
 
 CREATE TABLE users
 (
@@ -14,7 +15,7 @@ CREATE TABLE users
 
 
 --liquibase formatted sql
---changeset quatation:202301261958
+--changeset quotation:202301261958
 
 INSERT INTO users(first_name, last_name, email, phone_number)
 VALUES ('Kirill',
@@ -23,7 +24,7 @@ VALUES ('Kirill',
         '+3725539249');
 
 --liquibase formatted sql
---changeset quatation:202301262055
+--changeset quotation:202301262055
 
 CREATE TABLE customers
 (
@@ -38,9 +39,7 @@ VALUES ('LOGISTIKA PLUSS OÜ',
 
 
 --liquibase formatted sql
---changeset quatation:202301262230
-
-CREATE EXTENSION ltree;
+--changeset quotation:202301262230
 
 CREATE TABLE products
 (
@@ -51,3 +50,16 @@ CREATE TABLE products
 );
 
 CREATE INDEX path_gist_idx ON products USING GIST (path);
+
+--liquibase formatted sql
+--changeset quotation:202301291930
+
+CREATE TABLE persons
+(
+    id           uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+    company_id   uuid REFERENCES customers (id),
+    first_name   VARCHAR(30) NOT NULL,
+    last_name    VARCHAR(30) NOT NULL,
+    email        VARCHAR(50) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL
+);
