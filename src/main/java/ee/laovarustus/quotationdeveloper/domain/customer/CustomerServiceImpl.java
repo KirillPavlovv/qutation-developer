@@ -14,12 +14,12 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
     @Resource
     private PersonRepository personRepository;
+    @Resource
+    public CustomerMapper customerMapper;
 
     @Override
     public Customer save(CustomerRegistrationRequest customerRegistrationRequest) {
-        Customer customer = new Customer();
-        customer.setCompanyName(customerRegistrationRequest.getCompanyName());
-        customer.setGeneralAddress(customerRegistrationRequest.getGeneralAddress());
+        Customer customer = customerMapper.fromRegistrationForm(customerRegistrationRequest);
         Customer customerSaved = customerRepository.save(customer);
         Person person = new Person();
         person.setCompany(customerSaved);

@@ -7,7 +7,8 @@ import org.hibernate.annotations.GenericGenerator;
 import java.util.UUID;
 
 @Builder
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
