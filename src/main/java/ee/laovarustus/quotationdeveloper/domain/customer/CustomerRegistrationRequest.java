@@ -21,29 +21,4 @@ public class CustomerRegistrationRequest {
 
     private String email;
 
-
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public String getGeneralAddress() {
-        return generalAddress;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
 }

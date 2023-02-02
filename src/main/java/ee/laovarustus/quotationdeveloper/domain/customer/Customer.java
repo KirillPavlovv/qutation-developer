@@ -27,27 +27,4 @@ public class Customer {
     @Column(name = "general_address", nullable = false, length = 150)
     private String generalAddress;
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public String getGeneralAddress() {
-        return generalAddress;
-    }
-
-    public void setGeneralAddress(String generalAddress) {
-        this.generalAddress = generalAddress;
-    }
 }
