@@ -18,6 +18,8 @@
 		<liquibase.version>4.19.0</liquibase.version>
 		<mapstruct.version>1.5.3.Final</mapstruct.version>
 		<lombok.version>1.18.24</lombok.version>
+		<maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
+		<asciidoctor.maven.plugin.version>2.2.1</asciidoctor.maven.plugin.version>
 	</properties>
 
 	<dependencies>
@@ -77,7 +79,7 @@
 			<plugin>
 				<groupId>org.asciidoctor</groupId>
 				<artifactId>asciidoctor-maven-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>${asciidoctor.maven.plugin.version}</version>
 				<executions>
 					<execution>
 						<id>generate-docs</id>
@@ -115,7 +117,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
+				<version>${maven.compiler.plugin.version}</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
