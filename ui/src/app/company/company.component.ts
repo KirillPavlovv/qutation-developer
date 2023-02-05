@@ -29,8 +29,7 @@ export class CompanyComponent implements OnInit {
       .subscribe(response => {
         console.log(response)
       })
-
-    console.log(customerRegistrationRequest)
+    this.onCancel();
   }
 
   ngOnInit(): void {

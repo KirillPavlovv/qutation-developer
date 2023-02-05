@@ -12,6 +12,7 @@
 .card {
   border-radius: 12px;
   margin-top: 2rem;
+  margin-right: 2rem;
   border-width: 1px;
   border-style: solid;
   border-color: darkgrey;
