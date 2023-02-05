@@ -43,8 +43,8 @@ VALUES ('LOGISTIKA PLUSS OÜ',
 
 CREATE TABLE products
 (
-    id        uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-    parent_id uuid,
+    id        SERIAL PRIMARY KEY,
+    parent_id numeric,
     name      TEXT  NOT NULL,
     path      ltree NOT NULL
 );
@@ -68,3 +68,10 @@ CREATE TABLE persons
 --changeset quotation:202302052020
 ALTER TABLE products ADD description VARCHAR(500);
 ALTER TABLE products ADD image_path VARCHAR(150);
+
+--liquibase formatted sql
+--changeset quotation:202302052058
+INSERT INTO products (parent_id, name, path, description, image_path)
+VALUES (0, 'MECALUX', 'Mecalux', 'Hispaania toode', '/products/Mecalux');
+
+

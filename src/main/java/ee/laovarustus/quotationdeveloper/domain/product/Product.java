@@ -1,12 +1,10 @@
 package ee.laovarustus.quotationdeveloper.domain.product;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.UUID;
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Builder
 @AllArgsConstructor
@@ -15,16 +13,23 @@ import java.util.UUID;
 @Setter
 @Entity
 @Table(name = "products")
-public class Product {
+public class Product implements Serializable {
+    private static final long serialVersionUID = -6407135433878518241L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private UUID id;
+    private Integer id;
 
     @Column(name = "parent_id")
-    private UUID parentId;
+    private BigDecimal parentId;
 
     @Column(name = "name", nullable = false, length = Integer.MAX_VALUE)
     private String name;
+
+    @Column(name = "description", length = 500)
+    private String description;
+    @Column(name = "image_path", length = 150)
+    private String imagePath;
 
 /*
     TODO [JPA Buddy] create field to map the 'path' column
