@@ -63,3 +63,8 @@ CREATE TABLE persons
     email        VARCHAR(50) NOT NULL,
     phone_number VARCHAR(20) NOT NULL
 );
+
+--liquibase formatted sql
+--changeset quotation:202302052020
+ALTER TABLE products ADD description VARCHAR(500);
+ALTER TABLE products ADD image_path VARCHAR(150);

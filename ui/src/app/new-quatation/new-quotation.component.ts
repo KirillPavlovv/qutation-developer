@@ -3,10 +3,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-proposal',
-  templateUrl: './new-proposal.component.html',
-  styleUrls: ['./new-proposal.component.css']
+  templateUrl: './new-quotation.component.html',
+  styleUrls: ['./new-quotation.component.css']
 })
-export class NewProposalComponent implements OnInit{
+export class NewQuotationComponent implements OnInit{
 
   @ViewChild('companyInput') companyInputRef: ElementRef;
 

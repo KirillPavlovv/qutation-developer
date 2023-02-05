@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {NewProposalComponent} from "./new-proposal/new-proposal.component";
-import {ProposalListComponent} from "./proposal-list/proposal-list.component";
+import {NewQuotationComponent} from "./new-quatation/new-quotation.component";
+import {QuotationListComponent} from "./quotation-list/quotation-list.component";
 import {CompanyComponent} from "./company/company.component";
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/new-proposal', pathMatch: 'full'},
-  {path: 'new-proposal', component: NewProposalComponent},
-  {path: 'proposal-list', component: ProposalListComponent},
+  {path: 'new-proposal', component: NewQuotationComponent},
+  {path: 'proposal-list', component: QuotationListComponent},
   {path: 'company', component: CompanyComponent}
 ];
 

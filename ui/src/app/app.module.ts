@@ -4,23 +4,29 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from "./header/header.component";
 import {DropdownDirective} from './shared/dropdown.directive';
-import { ProposalListComponent } from './proposal-list/proposal-list.component';
-import { NewProposalComponent } from './new-proposal/new-proposal.component';
+import { QuotationListComponent } from './quotation-list/quotation-list.component';
+import { NewQuotationComponent } from './new-quatation/new-quotation.component';
 import { CompanyComponent } from './company/company.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule} from "@angular/forms";
 import { PersonComponent } from './company/person/person.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ProductListComponent } from './new-quatation/product-list/product-list.component';
+import { ProductItemComponent } from './new-quatation/product-list/product-group/product-item/product-item.component';
+import { ProductGroupComponent } from './new-quatation/product-list/product-group/product-group.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DropdownDirective,
-    ProposalListComponent,
-    NewProposalComponent,
+    QuotationListComponent,
+    NewQuotationComponent,
     CompanyComponent,
     PersonComponent,
+    ProductListComponent,
+    ProductItemComponent,
+    ProductGroupComponent,
   ],
   imports: [
     BrowserModule,
