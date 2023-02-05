@@ -18,7 +18,7 @@ export class CompanyComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     const customerRegistrationRequest = new CustomerRegistrationRequest(
-      form.value.customer.companyName,
+      form.value.customer.companyName.toUpperCase(),
       form.value.customer.generalAddress,
       form.value.person.firstName,
       form.value.person.lastName,
