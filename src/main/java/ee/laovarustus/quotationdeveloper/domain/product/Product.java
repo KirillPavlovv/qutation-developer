@@ -21,7 +21,7 @@ public class Product implements Serializable {
     private Integer id;
 
     @Column(name = "parent_id")
-    private BigDecimal parentId;
+    private Integer parentId;
 
     @Column(name = "name", nullable = false, length = Integer.MAX_VALUE)
     private String name;
