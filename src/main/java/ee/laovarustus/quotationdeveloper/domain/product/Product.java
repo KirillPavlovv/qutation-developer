@@ -31,6 +31,8 @@ public class Product implements Serializable {
     @Column(name = "image_path", length = 150)
     private String imagePath;
 
+    private int depth;
+
 /*
     TODO [JPA Buddy] create field to map the 'path' column
      Available actions: Define target Java type | Uncomment as is | Remove column mapping

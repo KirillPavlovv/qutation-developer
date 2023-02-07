@@ -8,10 +8,9 @@
           Choose manufacturer
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-          <li *ngFor="let product of products"><a class="dropdown-item" href="#">{{ product.name }}</a></li>
+          <li *ngFor="let product of products"><a class="dropdown-item" href="#">{{ product.name | titlecase}}</a></li>
         </ul>
       </div>
     </div>
   </div>
 </div>
-

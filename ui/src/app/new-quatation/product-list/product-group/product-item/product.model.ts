@@ -5,5 +5,6 @@ export class Product {
   public name: string;
   public description: string;
   public imagePath: string;
+  public depth: number;
 
 }

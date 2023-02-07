@@ -7,19 +7,19 @@ import {Product} from "./product-item/product.model";
   templateUrl: './product-group.component.html',
   styleUrls: ['./product-group.component.css']
 })
-export class ProductGroupComponent implements OnInit{
+export class ProductGroupComponent implements OnInit {
 
   products: Product[];
+  productGroups: Product[];
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
     this.http.get<Product[]>('http://localhost:8080/product')
-      .subscribe(products =>{
+      .subscribe(products => {
         this.products = products;
         console.log(this.products)
       })
   }
-
 }
