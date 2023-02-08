@@ -20,6 +20,6 @@ export class ProductGroupComponent implements OnInit {
       .subscribe(products => {
         this.products = products;
         console.log(this.products)
-      })
+      });
   }
 }

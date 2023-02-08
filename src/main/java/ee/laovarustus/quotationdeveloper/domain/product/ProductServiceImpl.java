@@ -12,7 +12,7 @@ public class ProductServiceImpl implements ProductService{
     private ProductRepository productRepository;
 
     @Override
-    public List<Product> getAll() {
-       return productRepository.findAll();
+    public List<Product> getProductGroups() {
+       return productRepository.findAllByPath();
     }
 }

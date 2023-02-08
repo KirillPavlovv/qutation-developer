@@ -10,7 +10,7 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     @Query(
-            value = "SELECT *, nlevel(path) as depth FROM products ORDER BY path",
+            value = "SELECT *, nlevel(path) as depth FROM products WHERE nlevel(path) =1  ORDER BY path",
             nativeQuery = true)
-    List<Product>findAll();
+    List<Product> findAllByPath();
 }
