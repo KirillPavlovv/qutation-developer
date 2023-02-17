@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Product} from "./product-item/product.model";
 
 @Component({
   selector: 'app-product-group',
@@ -6,6 +7,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./product-group.component.css']
 })
 export class ProductGroupComponent implements OnInit {
+  @Input() productGroup: Product;
+
   ngOnInit(): void {
   }
 

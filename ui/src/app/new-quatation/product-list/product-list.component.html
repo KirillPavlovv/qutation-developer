@@ -6,10 +6,14 @@
           <button class="btn btn-secondary dropdown-toggle"
                   type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Choose manufacturer
+            Choose product group
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
-            <li *ngFor="let product of products"><a class="dropdown-item" href="#">{{ product.name | titlecase}}</a></li>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li *ngFor="let product of products">
+              <a class="dropdown-item" href="#">
+                {{ product.name | titlecase}}
+              </a>
+            </li>
           </ul>
         </div>
         <app-product-group></app-product-group>
