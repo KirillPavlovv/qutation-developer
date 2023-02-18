@@ -20,6 +20,7 @@
 		<lombok.version>1.18.24</lombok.version>
 		<maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
 		<asciidoctor.maven.plugin.version>2.2.1</asciidoctor.maven.plugin.version>
+		<dropbox.core.sdk.version>5.4.4</dropbox.core.sdk.version>
 	</properties>
 
 	<dependencies>
@@ -71,6 +72,11 @@
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
 			<version>${mapstruct.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.dropbox.core</groupId>
+			<artifactId>dropbox-core-sdk</artifactId>
+			<version>${dropbox.core.sdk.version}</version>
 		</dependency>
 	</dependencies>
 
