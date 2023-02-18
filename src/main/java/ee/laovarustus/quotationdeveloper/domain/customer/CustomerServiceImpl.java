@@ -1,7 +1,7 @@
 package ee.laovarustus.quotationdeveloper.domain.customer;
 
 import com.dropbox.core.DbxException;
-import ee.laovarustus.quotationdeveloper.domain.config.properties.DropboxConfig;
+import ee.laovarustus.quotationdeveloper.domain.service.DropboxService;
 import ee.laovarustus.quotationdeveloper.domain.customer.person.Person;
 import ee.laovarustus.quotationdeveloper.domain.customer.person.PersonMapper;
 import ee.laovarustus.quotationdeveloper.domain.customer.person.PersonRepository;
@@ -24,7 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Resource
     private PersonMapper personMapper;
     @Resource
-    private DropboxConfig dropboxConfig;
+    private DropboxService dropboxService;
 
     @Override
     public Customer save(CustomerRegistrationRequest customerRegistrationRequest) throws IOException, DbxException {
@@ -33,7 +33,7 @@ public class CustomerServiceImpl implements CustomerService {
         Person person = personMapper.fromRegistrationForm(customerRegistrationRequest);
         person.setCompany(customerSaved);
         personRepository.save(person);
-        dropboxConfig.configure();
+        dropboxService.configure();
         return customerSaved;
     }
 }
