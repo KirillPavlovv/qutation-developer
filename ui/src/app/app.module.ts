@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ProductListComponent } from './new-quatation/product-list/product-list.component';
 import { ProductItemComponent } from './new-quatation/product-list/product-group/product-item/product-item.component';
 import { ProductGroupComponent } from './new-quatation/product-list/product-group/product-group.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProductGroupComponent } from './new-quatation/product-list/product-grou
     ProductListComponent,
     ProductItemComponent,
     ProductGroupComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
