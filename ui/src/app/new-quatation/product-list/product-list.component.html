@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-sm-5 form-group input-group-sm">
         <div class="dropdown" appDropdown style="margin-bottom: 2rem">
-          <button class="btn btn-secondary dropdown-toggle"
+          <button class="form-control form-select mb-3 dropdown-toggle"
                   type="button" id="dropdownMenuButton"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Choose product group
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu col-sm-12" aria-labelledby="dropdownMenuButton">
             <li *ngFor="let product of products">
               <a class="dropdown-item" href="#">
                 {{ product.name | titlecase}}
