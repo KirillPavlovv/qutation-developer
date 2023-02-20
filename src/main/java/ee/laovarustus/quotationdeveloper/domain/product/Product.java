@@ -36,9 +36,6 @@ public class Product implements Serializable {
 
     private int depth;
 
-
-//    TODO [JPA Buddy] create field to map the 'path' column
-//     Available actions: Define target Java type | Uncomment as is | Remove column mapping
     @Column(name = "path", columnDefinition = "ltree not null")
     private String path;
 
