@@ -4,5 +4,6 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> getProductGroups();
+    List<Product> getAllProducts();
 }
 

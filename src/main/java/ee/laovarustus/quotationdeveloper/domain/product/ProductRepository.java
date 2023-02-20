@@ -13,4 +13,9 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
             value = "SELECT *, nlevel(path) as depth FROM products WHERE nlevel(path) =1  ORDER BY path",
             nativeQuery = true)
     List<Product> findAllByPath();
+
+    @Query(
+            value = "SELECT *, nlevel(path) as depth FROM products WHERE nlevel(path) =3 ORDER BY path",
+            nativeQuery = true)
+    List<Product> findAll();
 }

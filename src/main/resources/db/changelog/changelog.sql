@@ -43,10 +43,13 @@ VALUES ('LOGISTIKA PLUSS OÜ',
 
 CREATE TABLE products
 (
-    id        SERIAL PRIMARY KEY,
-    parent_id numeric,
-    name      TEXT  NOT NULL,
-    path      ltree NOT NULL
+    id          SERIAL PRIMARY KEY,
+    parent_id   numeric,
+    name        TEXT          NOT NULL,
+    path        ltree         NOT NULL,
+    description VARCHAR(500),
+    image_path  VARCHAR(150),
+    price       numeric(6, 2) NOT NULL
 );
 
 CREATE INDEX path_gist_idx ON products USING GIST (path);
@@ -65,13 +68,22 @@ CREATE TABLE persons
 );
 
 --liquibase formatted sql
---changeset quotation:202302052020
-ALTER TABLE products ADD description VARCHAR(500);
-ALTER TABLE products ADD image_path VARCHAR(150);
+--changeset quotation:202302052058
+INSERT INTO products (parent_id, name, path, description, image_path, price)
+VALUES (0, 'MECALUX', 'Mecalux', 'Hispaania toode', '/products/Mecalux', 25.95);
+
+
 
 --liquibase formatted sql
---changeset quotation:202302052058
-INSERT INTO products (parent_id, name, path, description, image_path)
-VALUES (0, 'MECALUX', 'Mecalux', 'Hispaania toode', '/products/Mecalux');
+--changeset quotation:202302202058
+INSERT INTO products (parent_id, name, path, description, image_path, price)
+VALUES (0, 'LINDE', 'LINDE', 'Saksa toode', '/products/LINDE', 300.95);
+INSERT INTO products (parent_id, name, path, description, image_path, price)
+VALUES (0, 'TOYOTA', 'TOYOTA', 'Jaapani toode', '/products/TOYOTA', 10.20);
+INSERT INTO products (parent_id, name, path, description, image_path, price)
+VALUES (1, 'FRAME', 'MECALUX.FRAME', 'Talad', '/products/MECALUX/FRAME', 1.20);
 
-
+--liquibase formatted sql
+--changeset quotation:202302202116
+INSERT INTO products (parent_id, name, path, description, image_path, price)
+VALUES (4, '100x60', 'MECALUX.FRAME.100x60', '100 x 60 mm', '/products/MECALUX/FRAME/100x60', 0.20);

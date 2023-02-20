@@ -15,4 +15,9 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> getProductGroups() {
        return productRepository.findAllByPath();
     }
+
+    @Override
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
 }

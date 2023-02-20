@@ -1,4 +1,4 @@
-package ee.laovarustus.quotationdeveloper.domain.config.properties;
+package ee.laovarustus.quotationdeveloper.config.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

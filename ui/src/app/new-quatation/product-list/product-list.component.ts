@@ -9,13 +9,12 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ProductListComponent {
   products: Product[];
-  productGroups: Product[];
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
-    this.http.get<Product[]>('http://localhost:8080/product')
+    this.http.get<Product[]>('http://localhost:8080/product-groups')
       .subscribe(products => {
         this.products = products;
         console.log(this.products)

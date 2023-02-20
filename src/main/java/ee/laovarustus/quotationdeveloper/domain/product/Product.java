@@ -31,12 +31,15 @@ public class Product implements Serializable {
     @Column(name = "image_path", length = 150)
     private String imagePath;
 
+    @Column(name = "price")
+    private BigDecimal price;
+
     private int depth;
 
-/*
-    TODO [JPA Buddy] create field to map the 'path' column
-     Available actions: Define target Java type | Uncomment as is | Remove column mapping
+
+//    TODO [JPA Buddy] create field to map the 'path' column
+//     Available actions: Define target Java type | Uncomment as is | Remove column mapping
     @Column(name = "path", columnDefinition = "ltree not null")
-    private Object path;
-*/
+    private String path;
+
 }

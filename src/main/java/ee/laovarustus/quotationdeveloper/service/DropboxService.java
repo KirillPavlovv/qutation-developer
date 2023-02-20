@@ -1,4 +1,4 @@
-package ee.laovarustus.quotationdeveloper.domain.service;
+package ee.laovarustus.quotationdeveloper.service;
 
 import com.dropbox.core.DbxException;
 import com.dropbox.core.DbxRequestConfig;
@@ -7,7 +7,7 @@ import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.ListFolderResult;
 import com.dropbox.core.v2.files.Metadata;
 import com.dropbox.core.v2.users.FullAccount;
-import ee.laovarustus.quotationdeveloper.domain.config.properties.DropBoxProperties;
+import ee.laovarustus.quotationdeveloper.config.properties.DropBoxProperties;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
