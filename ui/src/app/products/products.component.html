@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="panel-group" *ngFor="let productGroup of productGroups">
+    <div class="panel panel-primary" style="border-color: #ccc">
+      <div class="panel-body">
+        <table class="table table-striped">
+          <caption> {{ productGroup.name | titlecase }} </caption>
+          <thead class="text text-primary">
+          <tr>
+            <th class="col-sm-3">Product</th>
+            <th class="col-sm-3">Dimensions</th>
+            <th class="col-sm-2">Price, EUR</th>
+            <th class="col-sm-1">Action</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let product of products; let i = index;">
+          <tr *ngIf="product.path.startsWith(productGroup.name)">
+            <td class="col-sm-3">
+              <a>{{ product.path.split(".").at(1) }}</a>
+            </td>
+            <td class="col-sm-3">
+              <a>{{ product.name }}</a>
+            </td>
+            <td class="col-sm-2">
+              <a>{{ product.price }}</a>
+            </td>
+            <td class="col-sm-1">
+              <button class="btn btn-danger pull-left" (click)="deleteRow(i)" style='cursor: pointer;'>Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-info" (click)="submit()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
