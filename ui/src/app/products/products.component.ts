@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Product} from "../new-quatation/product-list/product-group/product-item/product.model";
 import {HttpClient} from "@angular/common/http";
+import {MatDialog} from "@angular/material/dialog";
+import {NewProductModalComponent} from "./new-product-modal/new-product-modal.component";
 
 @Component({
   selector: 'app-products',
@@ -12,7 +14,7 @@ export class ProductsComponent {
   products: Product[];
   productGroups: Product[];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public matDialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -40,4 +42,12 @@ export class ProductsComponent {
     console.log(this.products)
   }
 
+  openModal() {
+    const dialogRef = this.matDialog.open(NewProductModalComponent)
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+
+  }
 }

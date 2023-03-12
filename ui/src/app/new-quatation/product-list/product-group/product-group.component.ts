@@ -7,7 +7,8 @@ import {Product} from "./product-item/product.model";
   styleUrls: ['./product-group.component.css']
 })
 export class ProductGroupComponent implements OnInit {
-  @Input() productGroup: Product;
+  @Input() manufacturer: Product;
+
 
   ngOnInit(): void {
   }

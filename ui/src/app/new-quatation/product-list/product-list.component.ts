@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Product} from "./product-group/product-item/product.model";
 import {HttpClient} from "@angular/common/http";
 
@@ -9,6 +9,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ProductListComponent {
   products: Product[];
+  manufacturer: Product;
 
   constructor(private http: HttpClient) {
   }
@@ -17,7 +18,6 @@ export class ProductListComponent {
     this.http.get<Product[]>('http://localhost:8080/product-groups')
       .subscribe(products => {
         this.products = products;
-        console.log(this.products)
       });
   }
 }

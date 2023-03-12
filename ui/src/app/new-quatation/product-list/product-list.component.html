@@ -4,21 +4,22 @@
       <div class="col-sm-5 form-group input-group-sm">
         <div class="dropdown" appDropdown style="margin-bottom: 2rem">
           <button class="form-control form-select mb-3 dropdown-toggle"
-                  type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Choose product group
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+          >Choose product group
           </button>
           <ul class="dropdown-menu col-sm-12" aria-labelledby="dropdownMenuButton">
             <li *ngFor="let product of products">
               <a class="dropdown-item" href="#">
-                {{ product.name | titlecase}}
+                {{ product.name | titlecase }}
               </a>
             </li>
           </ul>
         </div>
-        <div class="row">
-            <app-product-group></app-product-group>
-        </div>
+        <app-product-group *ngIf="manufacturer"></app-product-group>
       </div>
     </div>
   </div>
